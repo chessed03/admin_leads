@@ -12,7 +12,7 @@
     </head>
     <body>
         <div class="row">
-            &nbsp;&nbsp;&nbsp;MARKETING LIMITED COMPANY
+            &nbsp;&nbsp;&nbsp;PLUS MARKETS INC.
             <br>
             <br>
            
@@ -47,7 +47,7 @@
 
                     <div class="col-md-1"></div>
 
-                    <div class="col-3 text-center">
+                    <div class="col-5 text-center">
                     
                         File
 
@@ -59,14 +59,14 @@
 
                     </div>
 
-                    <div class="col-5 text-center"></div>
+                    <div class="col-3 text-center"></div>
 
                     <div class="col-1"></div>
 
-                    <div class="col-3 text-center">
+                    <div class="col-5 text-center">
                     
-                        <a href="#" id="linkFile"></a>
-
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                        
                     </div>
 
                     <div class="col-3 text-center" id="countCredits">
@@ -127,15 +127,14 @@
 
                 }
 
-                $("#linkFile").removeAttr("href");
-
-                $("#linkFile").attr("href", response.response.results.download);
-
-                $("#linkFile").text("download");
-
+                
                 $('#countCredits').html(response.response.results.credits);
 
                 $('#file').val('');
+                
+                $.get(response.response.results.download, function(contents) {
+                    $("#exampleFormControlTextarea1").val(contents);
+                },'text');
                 
             });
 

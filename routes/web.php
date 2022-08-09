@@ -19,4 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/index',[AdminController::class, 'index']);
+Route::get('/index-two',[AdminController::class, 'indexTwo']);
 Route::any('/send-form',[AdminController::class, 'sendForm'])->name('send-form');
