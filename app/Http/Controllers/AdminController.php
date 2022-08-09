@@ -17,6 +17,11 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
+    public function indexTwo()
+    {
+        return view('admin.index_two');
+    }
+
     public function sendForm(Request $request)
     {
         
